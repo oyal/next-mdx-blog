@@ -1,0 +1,15 @@
+---
+title: 'nextjs-mdx-blog'
+description: 'A simple blog built with Next.js and MDX'
+---
+
+A simple blog built with Next.js and MDX
+
+```tsx
+"use client";
+
+import { MDXRemote, MDXRemoteProps } from "next-mdx-remote";
+export default function Mdx(props: MDXRemoteProps) {
+  return <MDXRemote {...props} />;
+}
+```
