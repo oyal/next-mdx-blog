@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 import fs from "fs";
+import path from 'path'
 
 import "highlight.js/styles/atom-one-dark.css";
 
@@ -16,7 +17,8 @@ interface PostProps {
 
 const PostsPage = async ({ params: { slug } }: PostProps) => {
   try {
-    const postFile = fs.readFileSync(`content/posts/${slug}.mdx`);
+    const postFilePath = path.join(process.cwd(), `content/posts/${slug}.mdx`)
+    const postFile = fs.readFileSync(postFilePath);
 
     const source = await serialize(postFile, {
       parseFrontmatter: true,
@@ -42,7 +44,8 @@ const PostsPage = async ({ params: { slug } }: PostProps) => {
 export default PostsPage;
 
 async function getPostBySlug(slug: string) {
-  const postFile = fs.readFileSync(`content/posts/${slug}.mdx`);
+  const postFilePath = path.join(process.cwd(), `content/posts/${slug}.mdx`)
+  const postFile = fs.readFileSync(postFilePath);
 
   const source = await serialize(postFile, { parseFrontmatter: true });
 

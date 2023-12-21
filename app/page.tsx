@@ -2,6 +2,7 @@ import Link from "next/link";
 import { serialize } from "next-mdx-remote/serialize";
 import fs from "fs";
 import { format } from "date-fns";
+import path from "path";
 
 type PostType = {
   slug: string;
@@ -15,7 +16,8 @@ export default async function Home() {
 
   const posts = [] as PostType[];
   for (const postName of postNameList) {
-    const postFile = fs.readFileSync(`content/posts/${postName}`, "utf8");
+    const postFilePath = path.join(process.cwd(), `content/posts/${postName}`)
+    const postFile = fs.readFileSync(postFilePath);
     const serializedPost = await serialize<Record<string, unknown>, { title: string }>(postFile, {
       parseFrontmatter: true
     });
