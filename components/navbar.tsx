@@ -1,15 +1,22 @@
 import ThemeToggle from "@/components/theme-toggle";
 import Link from "next/link";
+import { Github } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <header className="flex items-center justify-between py-4">
+    <header className="sticky top-0 flex items-center justify-between bg-background py-4">
       <Link href="/" className="group relative text-2xl font-bold">
         NEXT_BLOG
-        <div className="bg-foreground absolute bottom-0 h-[2px] w-0 transition-all group-hover:w-full"></div>
+        <div className="absolute bottom-0 h-[2px] w-0 bg-foreground transition-all group-hover:w-full"></div>
       </Link>
-      <div className="flex items-center gap-2">
-        <span>about</span>
+      <div className="flex items-center gap-1">
+        <Link
+          href="https://www.github.com/oyal"
+          target="_blank"
+          className="inline-flex rounded-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900"
+        >
+          <Github className="h-5 w-5" />
+        </Link>
         <ThemeToggle />
       </div>
     </header>

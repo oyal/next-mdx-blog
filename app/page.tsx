@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { serialize } from "next-mdx-remote/serialize";
 import fs from "fs";
+import { format } from "date-fns";
 
 type PostType = {
   slug: string;
-} & Record<string, string>;
+  [key: string]: string;
+}
 
 export default async function Home() {
   const postNameList = fs
@@ -14,23 +16,29 @@ export default async function Home() {
   const posts = [] as PostType[];
   for (const postName of postNameList) {
     const postFile = fs.readFileSync(`content/posts/${postName}`, "utf8");
-    console.log(postFile);
-    const serializedPost = await serialize(postFile, {
-      parseFrontmatter: true,
+    const serializedPost = await serialize<Record<string, unknown>, { title: string }>(postFile, {
+      parseFrontmatter: true
     });
     posts.push({
       ...serializedPost.frontmatter,
-      slug: postName.replace(/\.mdx$/, ""),
+      slug: postName.replace(/\.mdx$/, "")
     });
   }
 
+  posts.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+
   return (
-    <div className="flex flex-col gap-4 py-4">
+    <div className="space-y-8 py-4">
       {posts.map((post, index) => (
-        <Link key={index} href={`/blogs/${post.slug}`}>
-          <h2 className="my-2 text-2xl font-semibold">{post.title}</h2>
+        <div key={index}>
+          <h2 className="text-xl font-bold">
+            <Link href={`/blogs/${post.slug}`}>
+              {post.title}
+            </Link>
+          </h2>
           <p>{post.description}</p>
-        </Link>
+          <time className="block my-1 text-sm text-zinc-500">{format(post.date, "yyyy-MM-dd")}</time>
+        </div>
       ))}
     </div>
   );

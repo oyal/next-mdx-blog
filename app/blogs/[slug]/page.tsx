@@ -1,6 +1,7 @@
 import { serialize } from "next-mdx-remote/serialize";
 import { notFound } from "next/navigation";
 import rehypeHighlight from "rehype-highlight";
+import remarkGfm from "remark-gfm";
 import fs from "fs";
 
 import "highlight.js/styles/atom-one-dark.css";
@@ -21,17 +22,19 @@ const PostsPage = async ({ params: { slug } }: PostProps) => {
       parseFrontmatter: true,
       mdxOptions: {
         rehypePlugins: [rehypeHighlight],
-      },
+        remarkPlugins: [remarkGfm],
+      }
     });
     return (
-      <div className="prose dark:prose-invert py-8">
+      <div className="prose prose-zinc dark:prose-invert py-8">
         <h1 className="text-center">
-          {(source.frontmatter as Record<string, string>).title}
+          {source.frontmatter.title as string}
         </h1>
         <Mdx {...source} />
       </div>
     );
-  } catch {
+  } catch (error) {
+    console.log(error);
     notFound();
   }
 };
