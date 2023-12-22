@@ -1,0 +1,40 @@
+export const blog = {
+  title: 'nextjs-mdx-bloge',
+  description: 'A simple blog built with Next.js and MDX',
+  date: '2023-12-22',
+}
+
+export const metadata = {
+  title: 'nextjs-mdx-blog',
+  description: 'A simple blog built with Next.js and MDX',
+}
+
+import CustomComponent from '@/components/custom-component'
+
+A simple blog built with Next.js and MDX
+
+```tsx
+'use client'
+
+import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote'
+export default function Mdx(props: MDXRemoteProps) {
+  return <MDXRemote {...props} />
+}
+```
+
+<CustomComponent />
+
+<div className="rounded-md bg-yellow-50 p-4">
+  <div className="flex">
+    <div className="flex-shrink-0">！</div>
+    <div className="ml-3">
+      <h3 className="text-sm font-medium text-yellow-800">Attention needed</h3>
+      <div className="mt-2 text-sm text-yellow-700">
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+          pariatur, ipsum similique veniam quo totam eius aperiam dolorum.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

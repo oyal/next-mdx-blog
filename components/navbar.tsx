@@ -1,6 +1,7 @@
-import ThemeToggle from "@/components/theme-toggle";
-import Link from "next/link";
-import { Github } from "lucide-react";
+import Link from 'next/link'
+import { Github } from 'lucide-react'
+
+import ThemeToggle from '@/components/theme-toggle'
 
 const Navbar = () => {
   return (
@@ -20,7 +21,7 @@ const Navbar = () => {
         <ThemeToggle />
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
