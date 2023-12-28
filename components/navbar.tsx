@@ -5,10 +5,10 @@ import ThemeToggle from '@/components/theme-toggle'
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 flex items-center justify-between bg-background py-4">
+    <header className="sticky top-0 flex items-center justify-between bg-zinc-50 py-4 dark:bg-zinc-950">
       <Link href="/" className="group relative text-2xl font-bold">
         NEXT_BLOG
-        <div className="absolute bottom-0 h-[2px] w-0 bg-foreground transition-all group-hover:w-full"></div>
+        <div className="absolute bottom-0 h-[2px] w-0 bg-zinc-950 transition-all group-hover:w-full dark:bg-zinc-50"></div>
       </Link>
       <div className="flex items-center gap-1">
         <Link

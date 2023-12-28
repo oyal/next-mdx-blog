@@ -10,12 +10,7 @@ const config: Config = {
     './content/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-      },
-    },
+    extend: {},
     typography: typographyStyles,
   },
   plugins: [require('@tailwindcss/typography')],
