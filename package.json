@@ -12,18 +12,21 @@
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.4",
+    "@sindresorhus/slugify": "^2.2.1",
     "@types/mdx": "^2.0.10",
     "date-fns": "^3.0.3",
     "fast-glob": "^3.3.2",
     "framer-motion": "^10.16.16",
     "highlight.js": "^11.9.0",
     "lucide-react": "^0.298.0",
+    "mdast-util-to-string": "^4.0.0",
     "next": "14.0.4",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "rehype-highlight": "^6.0.0",
-    "remark-gfm": "^4.0.0"
+    "remark-gfm": "^4.0.0",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
