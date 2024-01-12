@@ -14,4 +14,12 @@ function rehypeSlugify() {
   }
 }
 
-export const rehypePlugins = [rehypeHighlight, rehypeSlugify]
+export const rehypePlugins = [
+  [
+    rehypeHighlight,
+    {
+      detect: true,
+    },
+  ],
+  rehypeSlugify,
+]

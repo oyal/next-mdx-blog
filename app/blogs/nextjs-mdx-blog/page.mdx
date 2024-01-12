@@ -1,34 +1,108 @@
 export const blog = {
-  title: 'nextjs-mdx-bloge',
-  description: 'A simple blog built with Next.js and MDX',
+  title: 'Next Blog',
+  description:
+    '这是一个使用 Next.js、TailwindCSS 和 MDX 构建的一个简易博客，托管在 Github，并且由 Vercel 自动部署。在这个项目中，可以使用 Markdown 语法编写博客文章，也可以使用 React 组件编写交互式内容。',
   date: '2023-12-22',
 }
 
 export const metadata = {
-  title: 'nextjs-mdx-blog',
-  description: 'A simple blog built with Next.js and MDX',
+  title: 'Next Blog',
+  description:
+    '这是一个使用 Next.js、TailwindCSS 和 MDX 构建的一个简易博客，托管在 Github，并且由 Vercel 自动部署。在这个项目中，可以使用 Markdown 语法编写博客文章，也可以使用 React 组件编写交互式内容。',
 }
 
 import CustomComponent from '@/components/custom-component'
 
-A simple blog built with Next.js and MDX
+> 这是一个使用 Next.js、TailwindCSS 和 MDX 构建的一个简易博客，托管在 Github，并且由 Vercel 自动部署。在这个项目中，可以使用 Markdown 语法编写博客文章，也可以使用 React 组件编写交互式内容。
 
-```tsx
-'use client'
+## 什么是 Markdown？
 
-import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote'
-export default function Mdx(props: MDXRemoteProps) {
-  return <MDXRemote {...props} />
-}
+Markdown 是一种用于格式化文本的轻量级标记语言。它允许您使用纯文本语法编写并将其转换为结构上有效的 HTML。它通常用于在网站和博客上编写内容。
+
+例如，Markdown 语法如下：
+
+```md
+# 这是一个标题
+
+## 这是一个二级标题
+
+- 这是一个列表项
+- 这是另一个列表项
+```
+
+## 什么是 MDX？
+
+MDX 是 Markdown 的超集，它允许你在 Markdown 文件中直接编写 JSX。这意味着你可以在 Markdown 文档中直接使用 React 组件，从而在内容中添加动态交互性，可以在内容中嵌入复杂的 UI 和动态功能。
+
+例如，下面的代码将在页面中渲染一个自定义组件：
+
+```
+import CustomComponent from '@/components/custom-component'
+<CustomComponent />
 ```
 
 <CustomComponent />
 
-<div className="rounded-md bg-yellow-50 p-4">
+也可以在 MDX 中使用 HTML 标签，并且可以使用 TailwindCSS 的类名来添加样式。
+
+```html
+<div className="not-prose rounded-md bg-yellow-50 p-4">
   <div className="flex">
-    <div className="flex-shrink-0">！</div>
+    <div className="flex-shrink-0">
+      <svg
+        className="h-5 w-5 text-yellow-400"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+        />
+      </svg>
+    </div>
     <div className="ml-3">
       <h3 className="text-sm font-medium text-yellow-800">Attention needed</h3>
+      <div className="mt-2 text-sm text-yellow-700">
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+          pariatur, ipsum similique veniam quo totam eius aperiam dolorum.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+<br />
+
+<div className="not-prose rounded-md bg-yellow-50 p-4">
+  <div className="flex">
+    <div className="flex-shrink-0">
+      <svg
+        className="h-5 w-5 text-yellow-400"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+        />
+      </svg>
+    </div>
+    <div className="ml-3">
+      <h3 className="text-sm font-medium text-yellow-800">
+        注意：这是一个自定义组件
+      </h3>
       <div className="mt-2 text-sm text-yellow-700">
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
