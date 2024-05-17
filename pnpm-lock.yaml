@@ -14,9 +14,6 @@ dependencies:
   '@next/mdx':
     specifier: ^14.0.4
     version: 14.0.4(@mdx-js/loader@3.0.0)(@mdx-js/react@3.0.0)
-  '@sindresorhus/slugify':
-    specifier: ^2.2.1
-    version: 2.2.1
   '@types/mdx':
     specifier: ^2.0.10
     version: 2.0.10
@@ -35,9 +32,6 @@ dependencies:
   lucide-react:
     specifier: ^0.298.0
     version: 0.298.0(react@18.2.0)
-  mdast-util-to-string:
-    specifier: ^4.0.0
-    version: 4.0.0
   next:
     specifier: 14.0.4
     version: 14.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -56,9 +50,6 @@ dependencies:
   remark-gfm:
     specifier: ^4.0.0
     version: 4.0.0
-  unist-util-visit:
-    specifier: ^5.0.0
-    version: 5.0.0
 
 devDependencies:
   '@tailwindcss/typography':
@@ -405,21 +396,6 @@ packages:
   /@rushstack/eslint-patch@1.6.1:
     resolution: {integrity: sha512-UY+FGM/2jjMkzQLn8pxcHGMaVLh9aEitG3zY2CiY7XHdLiz3bZOwa6oDxNqEMv7zZkV+cj5DOdz0cQ1BP5Hjgw==}
     dev: true
-
-  /@sindresorhus/slugify@2.2.1:
-    resolution: {integrity: sha512-MkngSCRZ8JdSOCHRaYd+D01XhvU3Hjy6MGl06zhOk614hp9EOAp5gIkBeQg7wtmxpitU6eAL4kdiRMcJa2dlrw==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@sindresorhus/transliterate': 1.6.0
-      escape-string-regexp: 5.0.0
-    dev: false
-
-  /@sindresorhus/transliterate@1.6.0:
-    resolution: {integrity: sha512-doH1gimEu3A46VX6aVxpHTeHrytJAG6HgdxntYnCFiIFHEM/ZGpG8KiZGBChchjQmG0XFIBL552kBTjVcMZXwQ==}
-    engines: {node: '>=12'}
-    dependencies:
-      escape-string-regexp: 5.0.0
-    dev: false
 
   /@swc/helpers@0.5.2:
     resolution: {integrity: sha512-E4KcWTpoLHqwPHLxidpOqQbcrZVgi0rsmmZXUle1jXmJfuIf/UWpczUJ7MZZ5tlxytgJXyp0w4PGkkeLiuIdZw==}
