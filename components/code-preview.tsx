@@ -1,7 +1,7 @@
 'use client'
 
 import { Suspense, useMemo } from 'react'
-import { Tab, Tabs } from '@nextui-org/tabs'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Code from '@/components/code'
 
 interface CodePreviewProps {
@@ -26,17 +26,19 @@ const CodePreview = ({ path }: CodePreviewProps) => {
 
   return (
     <div>
-      <Tabs aria-label="Options">
-        <Tab key="preview" title="预览">
-          <Suspense fallback={<div>Loading...</div>}>
-            <div className="relative flex min-h-[250px] items-center justify-center border rounded-md">
-              {Preview}
-            </div>
-          </Suspense>
-        </Tab>
-        <Tab key="code" title="代码">
+      <Tabs defaultValue="preview">
+        <TabsList>
+          <TabsTrigger value="preview">预览</TabsTrigger>
+          <TabsTrigger value="code">代码</TabsTrigger>
+        </TabsList>
+        <TabsContent value="preview">
+          <div className="relative flex min-h-[250px] items-center justify-center rounded-md border">
+            <Suspense fallback={<div>Loading...</div>}>{Preview}</Suspense>
+          </div>
+        </TabsContent>
+        <TabsContent value="code">
           <Code code={codeString} />
-        </Tab>
+        </TabsContent>
       </Tabs>
     </div>
   )
