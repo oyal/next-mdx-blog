@@ -4,12 +4,12 @@ import { useState } from 'react'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { AnimatePresence, motion } from 'framer-motion'
 
-const CollapsibleMenu = () => {
+export default function CollapsibleMenu() {
   const [open, setOpen] = useState(false)
   return (
     <Collapsible.Root open={open} onOpenChange={setOpen}>
       <Collapsible.Trigger asChild>
-        <button className="flex items-center gap-1 rounded-md bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5">
+        <button className="flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 dark:bg-zinc-800">
           Toggle
           {open ? (
             <svg
@@ -69,5 +69,3 @@ const CollapsibleMenu = () => {
     </Collapsible.Root>
   )
 }
-
-export default CollapsibleMenu
