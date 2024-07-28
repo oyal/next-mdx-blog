@@ -15,7 +15,6 @@ const Counter = () => {
 
   useEffect(() => {
     if (isInView) {
-      console.log('123')
       motionValue.set(123123)
     }
   }, [motionValue, isInView])
