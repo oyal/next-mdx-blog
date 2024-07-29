@@ -12,7 +12,7 @@ const Navbar = () => {
       </Link>
       <div className="flex items-center gap-1">
         <Link
-          href="https://www.github.com/oyal"
+          href="https://www.github.com/oyal/next-mdx-blog"
           target="_blank"
           className="inline-flex rounded-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900"
         >
