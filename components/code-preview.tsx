@@ -1,8 +1,9 @@
 'use client'
 
-import { Suspense, useMemo } from 'react'
+import { useMemo } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Code from '@/components/code'
+import CopyButton from '@/components/copy-button'
 
 interface CodePreviewProps {
   path: string
@@ -33,11 +34,13 @@ const CodePreview = ({ path }: CodePreviewProps) => {
         </TabsList>
         <TabsContent value="preview">
           <div className="relative flex min-h-[250px] items-center justify-center rounded-md border">
-            <Suspense fallback={<div>Loading...</div>}>{Preview}</Suspense>
+            {Preview}
+            <CopyButton content={codeString} />
           </div>
         </TabsContent>
-        <TabsContent value="code">
+        <TabsContent value="code" className="relative">
           <Code code={codeString} />
+          <CopyButton content={codeString} />
         </TabsContent>
       </Tabs>
     </div>
