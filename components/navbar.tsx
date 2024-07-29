@@ -14,7 +14,7 @@ const Navbar = () => {
         <Link
           href="https://www.github.com/oyal/next-mdx-blog"
           target="_blank"
-          className="inline-flex rounded-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900"
+          className="inline-flex rounded-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800"
         >
           <Github className="h-5 w-5" />
         </Link>
