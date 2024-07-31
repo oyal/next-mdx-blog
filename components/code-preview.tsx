@@ -26,7 +26,7 @@ const CodePreview = ({ path }: CodePreviewProps) => {
   }, [path])
 
   return (
-    <div>
+    <div className="my-4">
       <Tabs defaultValue="preview">
         <TabsList>
           <TabsTrigger value="preview">预览</TabsTrigger>
